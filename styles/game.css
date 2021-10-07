@@ -1,0 +1,148 @@
+/*Variabili globali e import*/
+:root {
+    --sfondo_card: #fbfafa;
+    --due: #b1bad6;
+    --whitey: #d7d7d7;
+    --tre: #7531e6;
+    --quattro: #db5353;
+    --sfondo: #353858;
+}
+/*Preferenze generali*/
+html{
+    background-color: black;
+    font-family: 'Rubik', sans-serif;
+    color: var(--sfondo_card);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+body{
+    margin: 0em;
+    top:0;
+    height: -webkit-fill-available;
+}
+section{
+    background-color: var(--sfondo);
+    padding: 1.5em;
+    height: -webkit-fill-available;
+}
+h1,h2,h3,h4,h5,h6{
+    user-select: none;
+    font-family: 'Cairo', sans-serif;
+}
+i{
+    font-size: 2.8em;
+}
+/*colors*/
+#time{color: var(--whitey)}
+.read{animation: read 0.5s infinite;}
+@keyframes read {
+    0%{opacity: 1;}
+    100%{opacity: 0.5;}
+}
+/*#########################*/
+/*-----------GAME----------*/
+/*header*/
+#game > .header{
+    display:flex;
+    align-items: center;
+    height: 3em;
+}
+.header > h4 {
+    font-size:1.5em;
+}
+div.header > div{
+    height: min-content;
+    font-size: 0.7em;
+}
+#broadcast{
+    margin-left: auto;
+    margin-right: 1em;
+}
+/*footer*/
+#game > .footer{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: fixed;
+    height: 3em;
+    bottom:0.3em;
+    right:1em;
+}
+div.footer > div{
+    height: min-content;
+}
+#book{
+    font-size: 0.6em;
+    color: var(--whitey);
+}
+/*time*/
+#time > h3{
+    text-align: center;
+    font-weight: 500;
+    margin-top:0.1em;
+}
+/*hunted*/
+#hunted{
+    background-color: var(--sfondo_card);
+    display: flex;
+    align-items: center;
+    margin-top:-0.5em;
+    height: 4em;
+    padding: 0.8em;
+    border-radius: 0.8em;
+}
+#hunted > img{
+    height: 3em;
+    border-radius: 0.5em;
+}
+#hunted > div{
+    color: var(--sfondo);
+    margin-left: 0.8em;
+    text-align: center;
+}
+#hunted > div > h3{
+    margin: 0;
+    margin-bottom: 0.1em;
+    font-family: 'Rubik', sans-serif;
+}
+#hunted > div > h4{
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 100;
+}
+/*map*/
+#map{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 1em;
+    height: 50%;
+}
+#map > img {
+    height:100%;
+}
+/*hint*/
+#hint{
+    background-color: var(--tre);
+    box-shadow: 3px 3px 10px 0px #7531e69c;
+    display: flex;
+    align-items: center;
+    margin-top:-0.5em;
+    padding: 0.8em;
+    border-radius: 0.8em;
+}
+#hint > img{
+    height: 3em;
+    border-radius: 0.5em;
+}
+#hint > div{
+    color: var(--sfondo_card);
+    margin-left: 0.8em;
+}
+#hint > div > h3{
+    margin: 0;
+    margin-bottom: 0.1em;
+    line-height: 1em;
+    font-weight: 500;
+}

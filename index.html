@@ -4,27 +4,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- bootsreap -->
+    <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- File esterni -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="\styles\game.css">
 
-    <title>Caccia all'uomo - v2</title>
+    <title>Caccia all'uomo</title>
   </head>
   <body>
-    <img src="pal1.PNG" style="display:none;">
     <section id="game">
       <div class="header">
-        <div id="ava">
-          <i class="bi bi-person-bounding-box"></i><i class="bi bi-person-bounding-box"></i>
-        </div>
         <h4>Nickname</h4>
-        <div id="notifiche"><i class="bi bi-bell-fill"></i></div>
-        <div id="utenti"><i class="bi bi-person-lines-fill"></i></div>
+        <div id="broadcast"><i class="bi bi-broadcast-pin"></i></div>
+        <div id="people"><i class="bi bi-people-fill"></i></div>
       </div>
-      <div id="time"><h3>35:25:57</h3></div>
+      <div id="time">
+        <h3>35:25:57</h3>
+      </div>
+      <div id="hunted">
+        <img src="img/place.jpg">
+        <div>
+          <h3>Ricercato sconosciuto</h3>
+          <h4>Indossa una parrucca verde</h4>
+        </div>
+      </div>
+      <div id="map">
+        <img src="img/maps/base.png">
+      </div>
+      <div id="hint">
+        <img src="img/place.jpg">
+        <div>
+          <h3>Il ricercato è stato avvistato in zona pregalleno</h3>
+        </div>
+      </div>
+      <div class="footer">
+        <div id="book"><i class="bi bi-book"></i></div>
+      </div>
     </section>
-    <script src="script.js"></script>
+    <script src="script\ui.js"></script>
   </body>
 </html>
