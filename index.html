@@ -35,16 +35,26 @@
       <div id="map">
         <img src="img/maps/base.png">
       </div>
-      <div id="hint">
-        <img src="img/place.jpg">
+      <div id="hint" onclick="openhints()">
+        <i class="bi bi-broadcast-pin"></i>
         <div>
           <h3>Il ricercato è stato avvistato in zona pregalleno</h3>
         </div>
       </div>
+      <div id="hintcontainer">
+        <div id="hintscreen">
+            <p onclick="openhints()">x</p>
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam modi esse delectus animi sequi aliquid ipsum similique a amet dicta totam reprehenderit nulla odio repudiandae ipsa voluptate, illo corrupti temporibus.</h1>
+        </div>
+      </div>
       <div class="footer">
-        <div id="book"><i class="bi bi-book"></i></div>
+        <div id="book" onclick="openrules()"><p>Regole</p><i class="bi bi-book"></i></div>
       </div>
     </section>
-    <script src="script\ui.js"></script>
+    
+    
+
+    <script src="\scripts\connection.js"></script>
+    <script src="\scripts\ui.js"></script>
   </body>
 </html>

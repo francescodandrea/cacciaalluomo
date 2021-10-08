@@ -40,13 +40,24 @@ i{
     0%{opacity: 1;}
     100%{opacity: 0.5;}
 }
+.pulse{animation: pulse 0.5s infinite;}
+@keyframes pulse {
+    0%{transform: scale(1);}
+    100%{transform: scale(0.97);}
+}
 /*#########################*/
 /*-----------GAME----------*/
+#game{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
 /*header*/
 #game > .header{
     display:flex;
     align-items: center;
-    height: 3em;
+    height: 2em;
 }
 .header > h4 {
     font-size:1.5em;
@@ -76,6 +87,20 @@ div.footer > div{
     font-size: 0.6em;
     color: var(--whitey);
 }
+#book > p{
+    position: absolute;
+    font-size: 2.5em;
+    margin: 0px;
+    bottom: 12px;
+    left: 1em;
+    opacity: 0;
+    transform: translate(-100%, 0);
+    transition: opacity 0.4s, left 0.4s;
+}
+#book.label > p{
+    left: -0.3em;
+    opacity: 1;
+}
 /*time*/
 #time > h3{
     text-align: center;
@@ -94,12 +119,15 @@ div.footer > div{
 }
 #hunted > img{
     height: 3em;
-    border-radius: 0.5em;
+    border-radius: 1.5em;
+    margin-left: 0.3em;
 }
 #hunted > div{
     color: var(--sfondo);
     margin-left: 0.8em;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 #hunted > div > h3{
     margin: 0;
@@ -131,11 +159,10 @@ div.footer > div{
     margin-top:-0.5em;
     padding: 0.8em;
     border-radius: 0.8em;
-}
-#hint > img{
+    margin-bottom: 3em;
     height: 3em;
-    border-radius: 0.5em;
 }
+#hint > i {font-size: 2em; margin-left:0.2em}
 #hint > div{
     color: var(--sfondo_card);
     margin-left: 0.8em;
@@ -145,4 +172,40 @@ div.footer > div{
     margin-bottom: 0.1em;
     line-height: 1em;
     font-weight: 500;
+}
+#hint:active{
+    transform: scale(0.9);
+}
+/*hintscreen*/
+#hintcontainer{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    box-sizing: border-box;
+    padding: 1.5em;
+    z-index: 10;
+    transition: top 0.4s;
+}
+#hintcontainer.open{
+    top: 0%;
+}
+#hintscreen{
+    background-color: #7531e6;
+    box-shadow: 3px 3px 10px 0px #7531e69c;
+    height: 100%;
+    width: 100%;
+    display: block;
+    border-radius: 0.8em;
+    box-sizing: border-box;
+    padding: 1.5em;
+    position:relative;
+}
+#hintscreen > p{
+    top: 0px;
+    right: 13px;
+    font-size: 3em;
+    position: absolute;
+    margin: 0;
 }
