@@ -17,8 +17,16 @@ function hintcontents(x){
                 
                 h2.innerHTML=element.title;
                 if(element.img) img.src=element.img;
-                if(element.vid) vid.src=element.vid;
 
+                if(element.hasOwnProperty("vid")){
+                    if(element.vid[1]=='t')
+                        vid.src=element.vid;
+                     else
+                        vid.src="media/vid/"+element.vid;
+                    vid.setAttribute("type","video/mp4");
+                    vid.setAttribute("onclick", "controlthis(this)");
+                }
+                
                 h4.innerHTML=element.desc;
 
                 div.appendChild(h2);

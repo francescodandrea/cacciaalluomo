@@ -12,7 +12,7 @@ function hintmenu(x){
     
     switch (x) {
         case 0:
-            hintcontents("news");//hintcontents("hunted");
+            hintcontents("hunted");
             break;
         case 1:
             hintcontents("hint");
@@ -26,6 +26,14 @@ function hintmenu(x){
     }
 }
 
+function controlthis(thisv){
+    if(!thisv.paused){//is playing
+        thisv.pause();
+        thisv.currentTime=0;
+    }else{
+        thisv.play();
+    }
+}
 
 var rulcount;
 function openrules(){

@@ -3,7 +3,7 @@ var hintcon_engine;
 
 var hintdata;
 hintsstartup();
-hintengine(1);
+//hintengine(1);
 
 function hintengine(x){
     if(x){
