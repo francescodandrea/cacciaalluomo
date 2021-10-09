@@ -44,7 +44,15 @@
       <div id="hintcontainer">
         <div id="hintscreen">
             <p onclick="openhints()">x</p>
-            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam modi esse delectus animi sequi aliquid ipsum similique a amet dicta totam reprehenderit nulla odio repudiandae ipsa voluptate, illo corrupti temporibus.</h1>
+            <h1>Pannello di controllo</h1>
+            <div id="hintmenu">
+              <p onclick="hintmenu(0)">RICERCATO</p>
+              <p onclick="hintmenu(1)">INDIZI</p>
+              <p onclick="hintmenu(2)">SFIDE</p>
+              <p onclick="hintmenu(3)">EXTRA</p>
+            </div>
+            <div id="hintcontent">
+            </div>
         </div>
       </div>
       <div class="footer">
@@ -53,8 +61,8 @@
     </section>
     
     
-
     <script src="\scripts\connection.js"></script>
+    <script src="\scripts\data.js"></script>
     <script src="\scripts\ui.js"></script>
   </body>
 </html>

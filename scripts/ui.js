@@ -1,6 +1,31 @@
 function openhints(){
     document.querySelector("#hintcontainer").classList.toggle("open");
+    document.querySelector("#hintmenu > p:nth-child(1)").className="cur";
+    hintmenu(0);
 }
+
+function hintmenu(x){
+    document.querySelectorAll("#hintmenu > p").forEach(element => {
+        element.className="";
+    });
+    document.querySelector("#hintmenu > p:nth-child("+(x+1)+")").className="cur";
+    
+    switch (x) {
+        case 0:
+            hintcontents("news");//hintcontents("hunted");
+            break;
+        case 1:
+            hintcontents("hint");
+            break;
+        case 2:
+            hintcontents("chall");
+            break;
+        case 3:
+            
+            break;
+    }
+}
+
 
 var rulcount;
 function openrules(){

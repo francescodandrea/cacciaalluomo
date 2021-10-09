@@ -209,3 +209,46 @@ div.footer > div{
     position: absolute;
     margin: 0;
 }
+#hintscreen > h1{
+    margin: 0;
+}
+/*hintmenu*/
+#hintmenu{
+    display: flex;
+    justify-content: space-around;
+}
+#hintmenu > p{
+    padding: 0.5em;
+    border-bottom: solid transparent;
+    padding-bottom: 0.2em;
+    transition: all 0.3s;
+    height: 1.2em;
+}
+#hintmenu > p.cur{
+    background-color: #ffffff3b;
+    border-bottom: solid white;
+    height: 1.2em;
+}
+/*hintcontent*/
+#hintcontent{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 84%;
+}
+.hintrow{
+    border-bottom: solid #ffffff6b;
+}
+.hintrow > h2{
+    margin-bottom: 0.2em;
+}
+.hintrow > img{
+    max-width: 100%;
+}
+.hintrow > video{
+    max-width: 100%;
+}
+.hintrow > h4{
+    margin-top: 0.3em;
+    font-weight: 400;
+    line-height: 1.2em;
+}
