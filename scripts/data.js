@@ -21,7 +21,7 @@ function gethints(){
     const xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
-            var result=JSON.parse(this.responseText);
+            var result=JSON.parse(this.responseText).reverse();
                 console.log("hint upd");
                 hintdata=result;
                 hintscheckupd();

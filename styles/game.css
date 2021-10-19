@@ -118,13 +118,13 @@ div.footer > div{
     border-radius: 0.8em;
 }
 #hunted > img{
-    height: 3em;
-    border-radius: 1.5em;
+    height: 4em;
+    width: 4em;
+    border-radius: 2em;
     margin-left: 0.3em;
 }
 #hunted > div{
     color: var(--sfondo);
-    margin-left: 0.8em;
     text-align: center;
     margin-left: auto;
     margin-right: auto;

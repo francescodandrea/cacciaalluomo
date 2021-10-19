@@ -1,5 +1,32 @@
 function hintsupd(){
-    
+    let lasthunt;
+    hintdata.forEach(element => {
+        if(lasthunt==undefined && element.type=='hunted'){
+            lasthunt=element; return false;
+        }
+    });
+    sessionStorage.setItem("lasthunt",JSON.stringify(lasthunt));
+    let lasthint;
+    hintdata.forEach(element => {
+        if(lasthint==undefined && element.type!='hunted'){
+            lasthint=element; return false;
+        }
+    });
+    sessionStorage.setItem("lasthint",JSON.stringify(lasthint));
+
+    //hunted card
+    document.querySelector("#hunted > div > h3").innerHTML=lasthunt.title;
+    document.querySelector("#hunted > div > h4").innerHTML=lasthunt.desc;
+    document.querySelector("#hunted > img").src=lasthunt.img;
+    //hint card
+    document.querySelector("#hint > div > h3").innerHTML=lasthint.title;
+    let icon="";
+    switch (lasthint.type) {
+        case 'hint': icon="bi bi-search"; break;
+        case 'chall': icon="bi bi-puzzle"; break;
+        case 'news': icon="bi bi-broadcast-pin"; break;
+    }
+    document.querySelector("#hint > i").className=icon;
 }
 
 function hintcontents(x){

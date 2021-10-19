@@ -15,6 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="\styles\game.css">
 
+    <script src="\scripts\connection.js" defer></script>
+    <script src="\scripts\data.js" defer></script>
+    <script src="\scripts\ui.js" defer></script>
+
     <title>Caccia all'uomo</title>
   </head>
   <body>
@@ -30,8 +34,8 @@
       <div id="hunted">
         <img src="media/img/place.jpg">
         <div>
-          <h3>Ricercato sconosciuto</h3>
-          <h4>Indossa una parrucca verde</h4>
+          <h3></h3>
+          <h4></h4>
         </div>
       </div>
       <div id="map">
@@ -40,7 +44,7 @@
       <div id="hint" onclick="openhints()">
         <i class="bi bi-broadcast-pin"></i>
         <div>
-          <h3>Il ricercato è stato avvistato in zona pregalleno</h3>
+          <h3></h3>
         </div>
       </div>
       <div id="hintcontainer">
@@ -48,7 +52,6 @@
             <p onclick="openhints()">x</p>
             <h1>Pannello di controllo</h1>
             <div id="hintmenu">
-              <p onclick="hintmenu(0)">RICERCATO</p>
               <p onclick="hintmenu(1)">INDIZI</p>
               <p onclick="hintmenu(2)">SFIDE</p>
               <p onclick="hintmenu(3)">EXTRA</p>
@@ -62,9 +65,5 @@
       </div>
     </section>
     
-    
-    <script src="\scripts\connection.js"></script>
-    <script src="\scripts\data.js"></script>
-    <script src="\scripts\ui.js"></script>
   </body>
 </html>
