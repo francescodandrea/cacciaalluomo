@@ -1,7 +1,15 @@
 function openhints(){
     document.querySelector("#hintcontainer").classList.toggle("open");
     document.querySelector("#hintmenu > p:nth-child(1)").className="cur";
-    hintmenu(1);
+    let type=document.querySelector("#hint").dataset.type;
+    switch (type) {
+        case "hint":
+            hintmenu(1);
+            break;
+        case "chall":
+            hintmenu(2);
+            break;
+    }
 }
 function hintmenu(x){
     document.querySelectorAll("#hintmenu > p").forEach(element => {
@@ -12,12 +20,15 @@ function hintmenu(x){
     switch (x) {
         case 1:
             hintcontents("hint");
+            document.querySelector("#hintscreen").className="hint";
             break;
         case 2:
             hintcontents("chall");
+            document.querySelector("#hintscreen").className="chall";
             break;
         case 3:
             
+            document.querySelector("#hintscreen").className="";
             break;
     }
 }

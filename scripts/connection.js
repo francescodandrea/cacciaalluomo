@@ -1,10 +1,18 @@
 function hintsupd(){
     let lasthunt;
-    hintdata.forEach(element => {
+    hintdata.forEach(element => { //get first hunt typed
         if(lasthunt==undefined && element.type=='hunted'){
             lasthunt=element; return false;
         }
     });
+    if(lasthunt.img==undefined){ //if it has no img get the last one
+        hintdata.forEach(element => { 
+            if(element.type=='hunted' && element.img){
+                lasthunt.img=element.img; return false;
+            }
+        });
+    }
+
     sessionStorage.setItem("lasthunt",JSON.stringify(lasthunt));
     let lasthint;
     hintdata.forEach(element => {
@@ -27,6 +35,7 @@ function hintsupd(){
         case 'news': icon="bi bi-broadcast-pin"; break;
     }
     document.querySelector("#hint > i").className=icon;
+    document.querySelector("#hint").dataset.type=lasthint.type;
 }
 
 function hintcontents(x){

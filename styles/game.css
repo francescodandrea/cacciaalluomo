@@ -6,6 +6,12 @@
     --tre: #7531e6;
     --quattro: #db5353;
     --sfondo: #353858;
+    --hint:#7531e6;
+    --hintshadow:#7531e69c;
+    --chall:#cb2a48;
+    --challshadow:#e631319c;
+    --base:#292530;
+    --baseshadow:#2b2a2c9c;
 }
 /*Preferenze generali*/
 html{
@@ -152,8 +158,8 @@ div.footer > div{
 }
 /*hint*/
 #hint{
-    background-color: var(--tre);
-    box-shadow: 3px 3px 10px 0px #7531e69c;
+    background-color: var(--base);
+    box-shadow: 3px 3px 10px 0px var(--baseshadow);
     display: flex;
     align-items: center;
     margin-top:-0.5em;
@@ -161,6 +167,7 @@ div.footer > div{
     border-radius: 0.8em;
     margin-bottom: 3em;
     height: 3em;
+    transition: background-color .3s, box-shadow .3s;
 }
 #hint > i {font-size: 2em; margin-left:0.2em}
 #hint > div{
@@ -175,6 +182,14 @@ div.footer > div{
 }
 #hint:active{
     transform: scale(0.9);
+}
+#hint[data-type="chall"] {
+    background-color: var(--chall);
+    box-shadow: 3px 3px 10px 0px var(--challshadow);
+}
+#hint[data-type="hint"] {
+    background-color: var(--hint);
+    box-shadow: 3px 3px 10px 0px var(--hintshadow);
 }
 /*hintscreen*/
 #hintcontainer{
@@ -192,8 +207,8 @@ div.footer > div{
     top: 0%;
 }
 #hintscreen{
-    background-color: #7531e6;
-    box-shadow: 3px 3px 10px 0px #7531e69c;
+    background-color: var(--base);
+    box-shadow: 3px 3px 10px 0px var(--baseshadow);
     height: 100%;
     width: 100%;
     display: block;
@@ -201,6 +216,7 @@ div.footer > div{
     box-sizing: border-box;
     padding: 1.5em;
     position:relative;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 #hintscreen > p{
     top: 0px;
@@ -211,6 +227,14 @@ div.footer > div{
 }
 #hintscreen > h1{
     margin: 0;
+}
+#hintscreen.chall{
+    background-color: var(--chall);
+    box-shadow: 3px 3px 10px 0px var(--challshadow);
+}
+#hintscreen.hint{
+    background-color: var(--hint);
+    box-shadow: 3px 3px 10px 0px var(--hintshadow);
 }
 /*hintmenu*/
 #hintmenu{
