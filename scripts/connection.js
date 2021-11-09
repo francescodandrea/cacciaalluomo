@@ -5,7 +5,7 @@ function hintsupd(){
             lasthunt=element; return false;
         }
     });
-    if(lasthunt.img==undefined){ //if it has no img get the last one
+    if(lasthunt!=undefined && lasthunt.img==undefined){ //if it has no img get the last one
         hintdata.forEach(element => { 
             if(element.type=='hunted' && element.img){
                 lasthunt.img=element.img; return false;
@@ -23,9 +23,9 @@ function hintsupd(){
     sessionStorage.setItem("lasthint",JSON.stringify(lasthint));
 
     //hunted card
-    document.querySelector("#hunted > div > h3").innerHTML=lasthunt.title;
-    document.querySelector("#hunted > div > h4").innerHTML=lasthunt.desc;
-    document.querySelector("#hunted > img").src=lasthunt.img;
+    if(lasthunt!=undefined) document.querySelector("#hunted > div > h3").innerHTML=lasthunt.title;
+    if(lasthunt!=undefined) document.querySelector("#hunted > div > h4").innerHTML=lasthunt.desc;
+    if(lasthunt!=undefined) document.querySelector("#hunted > img").src=lasthunt.img;
     //hint card
     document.querySelector("#hint > div > h3").innerHTML=lasthint.title;
     let icon="";
@@ -40,9 +40,11 @@ function hintsupd(){
 
 function hintcontents(x){
     var container = document.querySelector("#hintcontent");
+    if(x=="news") container = document.querySelector("#newscontent");
+
     container.innerHTML="";
         hintdata.forEach(element => {
-            if(element.type==x && uservis.includes(element.vis)){
+            if(element.type==x && (uservis.includes(element.vis) || element.vis==teamcode)){
                 let div = document.createElement("div"),
                     h2 = document.createElement("h2"),
                     img = document.createElement("img"),
@@ -61,6 +63,8 @@ function hintcontents(x){
                         vid.src="media/vid/"+element.vid;
                     vid.setAttribute("type","video/mp4");
                     vid.setAttribute("onclick", "controlthis(this)");
+                    //vid.autoplay=true;
+                    vid.muted=true;
                 }
                 
                 h4.innerHTML=element.desc;

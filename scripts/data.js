@@ -1,15 +1,22 @@
 var hintconnection = false;
 var hintcon_engine;
 
+var uservis=[0];
+var teamcode=0;
+
 var hintdata;
 hintsstartup();
-hintengine(1);
+//hintengine(1);
+
+//getplayers();
+//checkcode("4565");
+getmyplayers("4565");
 
 function hintengine(x){
     if(x){
         hintcon_engine = setInterval(() => {
             gethints();
-        }, 500);
+        }, 5000);
         hintconnection=true;
     } else {
         clearInterval(hintcon_engine);
@@ -32,10 +39,22 @@ function gethints(){
 }
 
 function hintscheckupd(){
-    if(localStorage.getItem("HG_h")!=JSON.stringify(hintdata)){
+    if(localStorage.getItem("HG_h").length!=JSON.stringify(hintdata).length){
+
+        localStorage.setItem("HG_h", JSON.stringify(hintdata));
+
         hintsupd();
+        
+        //update panel view
+        if(document.querySelector("#hintcontainer").classList.contains("open")){
+            let elem=document.querySelector("#hintmenu > p.cur");
+                if (typeof elem.onclick == "function") { //check
+                    elem.onclick.apply(elem); //aggiorna contenuto
+                }
+                document.querySelector("#hintcontent").scrollTo(0,0); //scroll in alto
+        }
+
         console.log(hintdata);
-        localStorage.setItem("HG_h",JSON.stringify(hintdata));
     }
 }
 
@@ -48,5 +67,44 @@ function hintsstartup(){
     gethints();
 }
 
+function getplayers(){
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === this.DONE) {
+            var result=JSON.parse(this.responseText).reverse();
+                console.log("got players");
+                console.log(result);
+                
+        }
+    });
+    xhr.open("GET", "https://script.google.com/macros/s/AKfycbxZv7-NkU8RRHKXj3pwlGlLva4Wh4nVuO9fHekaHiWMJGsrUXJ_-7HoZfoSCUUSXY2GvQ/exec?richiesta=players");
+    xhr.send();
+}
 
-var uservis=[0];
+function getmyplayers(code){
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === this.DONE) {
+            var result=JSON.parse(this.responseText).reverse();
+                console.log("got players");
+                console.log(result);
+                document.querySelector("#game > div.header > h4").innerHTML=result[0].teamnick;
+        }
+    });
+    xhr.open("GET", "https://script.google.com/macros/s/AKfycbxZv7-NkU8RRHKXj3pwlGlLva4Wh4nVuO9fHekaHiWMJGsrUXJ_-7HoZfoSCUUSXY2GvQ/exec?richiesta=players&code="+code);
+    xhr.send();
+}
+
+function checkcode(code){
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === this.DONE) {
+            var result=JSON.parse(this.responseText).reverse();
+                console.log("code checked");
+                console.log(result[0].check);
+                
+        }
+    });
+    xhr.open("GET", "https://script.google.com/macros/s/AKfycbxZv7-NkU8RRHKXj3pwlGlLva4Wh4nVuO9fHekaHiWMJGsrUXJ_-7HoZfoSCUUSXY2GvQ/exec?richiesta=codecheck&code="+code);
+    xhr.send();
+}

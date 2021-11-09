@@ -31,6 +31,14 @@ section{
     background-color: var(--sfondo);
     padding: 1.5em;
     height: -webkit-fill-available;
+    transition: 0.3s opacity, 0.3s transform;
+    opacity: 0;
+    display: none;
+    transform: translateX(50%);
+}
+section.onopacity{
+    opacity: 1;
+    transform: translateX(0%);
 }
 h1,h2,h3,h4,h5,h6{
     user-select: none;
@@ -54,10 +62,12 @@ i{
 /*#########################*/
 /*-----------GAME----------*/
 #game{
-    display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-evenly;
+}
+#game.on{
+    display: flex;
 }
 /*header*/
 #game > .header{
@@ -121,7 +131,7 @@ div.footer > div{
     margin-top:-0.5em;
     height: 4em;
     padding: 0.8em;
-    border-radius: 0.8em;
+    border-radius: 0.5em;
 }
 #hunted > img{
     height: 4em;
@@ -163,8 +173,8 @@ div.footer > div{
     display: flex;
     align-items: center;
     margin-top:-0.5em;
-    padding: 0.8em;
-    border-radius: 0.8em;
+    padding: 1em;
+    border-radius: 5em;
     margin-bottom: 3em;
     height: 3em;
     transition: background-color .3s, box-shadow .3s;
@@ -275,4 +285,127 @@ div.footer > div{
     margin-top: 0.3em;
     font-weight: 400;
     line-height: 1.2em;
+}
+/*newsscreen*/
+#newscontainer{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    box-sizing: border-box;
+    padding: 1.5em;
+    z-index: 10;
+    transition: top 0.4s;
+}
+#newscontainer.open{
+    top: 0%;
+}
+#newsscreen{
+    background-color: var(--base);
+    box-shadow: 3px 3px 10px 0px var(--baseshadow);
+    height: 100%;
+    width: 100%;
+    display: block;
+    border-radius: 0.8em;
+    box-sizing: border-box;
+    padding: 1.5em;
+    position:relative;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+#newsscreen > p{
+    top: 0px;
+    right: 13px;
+    font-size: 3em;
+    position: absolute;
+    margin: 0;
+}
+#newsscreen > h1{
+    margin: 0;
+}
+#hintscreen.chall{
+    background-color: var(--chall);
+    box-shadow: 3px 3px 10px 0px var(--challshadow);
+}
+#hintscreen.hint{
+    background-color: var(--hint);
+    box-shadow: 3px 3px 10px 0px var(--hintshadow);
+}
+/*hintmenu*/
+#hintmenu{
+    display: flex;
+    justify-content: space-around;
+}
+#hintmenu > p{
+    padding: 0.5em;
+    border-bottom: solid transparent;
+    padding-bottom: 0.2em;
+    transition: all 0.3s;
+    height: 1.2em;
+}
+#hintmenu > p.cur{
+    background-color: #ffffff3b;
+    border-bottom: solid white;
+    height: 1.2em;
+}
+/*hintcontent*/
+#hintcontent{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 84%;
+}
+.hintrow{
+    border-bottom: solid #ffffff6b;
+}
+.hintrow > h2{
+    margin-bottom: 0.2em;
+}
+.hintrow > img{
+    max-width: 100%;
+}
+.hintrow > video{
+    max-width: 100%;
+}
+.hintrow > h4{
+    margin-top: 0.3em;
+    font-weight: 400;
+    line-height: 1.2em;
+}
+
+/*-----------TEAMS----------*/
+#teamstab{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+#teamstab.on{
+    display: flex;
+}
+#teamstab > div > p{
+    font-size: 1.3em;
+    margin: 1em 1em 0 0;
+}
+#teamstab > div > h4{
+    margin: 0.5em 0;
+}
+
+/*-----------RULES----------*/
+#rules{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+#rules.on{
+    display: flex;
+}
+#rules > div > p{
+    font-size: 1.3em;
+    margin: 1em 1em 0 0;
+}
+#rules > div > h4{
+    margin: 0.5em 0;
 }

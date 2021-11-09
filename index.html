@@ -22,11 +22,11 @@
     <title>Caccia all'uomo</title>
   </head>
   <body>
-    <section id="game">
+    <section id="game" class="on onopacity">
       <div class="header">
-        <h4>Nickname</h4>
-        <div id="broadcast"><i class="bi bi-broadcast-pin"></i></div>
-        <div id="people"><i class="bi bi-people-fill"></i></div>
+        <h4></h4>
+        <div id="broadcast" onclick="opennews()"><i class="bi bi-broadcast-pin"></i></div>
+        <div id="people" onclick="sectiontoggle('teamstab')"><i class="bi bi-people-fill"></i></div>
       </div>
       <div id="time">
         <h3>35:25:57</h3>
@@ -60,10 +60,34 @@
             </div>
         </div>
       </div>
+      <div id="newscontainer">
+        <div id="newsscreen">
+            <p onclick="opennews()">x</p>
+            <h1>Annunci dall'organizzazione</h1>
+            <div id="newscontent">
+            </div>
+        </div>
+      </div>
       <div class="footer">
         <div id="book" onclick="openrules()"><p>Regole</p><i class="bi bi-book"></i></div>
       </div>
     </section>
+
+    <section id="teamstab">
+      <div class="header">
+        <p onclick="sectiontoggle('teamstab')">< Indietro</p>
+        <h4>Partecipanti</h4>
+      </div>
+      <div id="content"></div>
+    </section>
     
+    <section id="rules">
+      <div class="header">
+        <p onclick="sectiontoggle('rules')">< Indietro</p>
+        <h4>Regole</h4>
+      </div>
+      <div id="content"></div>
+    </section>
+
   </body>
 </html>

@@ -1,13 +1,16 @@
 function openhints(){
-    document.querySelector("#hintcontainer").classList.toggle("open");
-    document.querySelector("#hintmenu > p:nth-child(1)").className="cur";
     let type=document.querySelector("#hint").dataset.type;
     switch (type) {
         case "hint":
-            hintmenu(1);
+            if(!document.querySelector("#hintcontainer").classList.contains("open")) hintmenu(1);
+            document.querySelector("#hintcontainer").classList.toggle("open");
             break;
         case "chall":
-            hintmenu(2);
+            if(!document.querySelector("#hintcontainer").classList.contains("open")) hintmenu(2);
+            document.querySelector("#hintcontainer").classList.toggle("open");
+            break;
+        case "news":
+            opennews();
             break;
     }
 }
@@ -33,6 +36,11 @@ function hintmenu(x){
     }
 }
 
+function opennews(){
+    if(!document.querySelector("#newscontainer").classList.contains("open")) hintcontents("news");
+    document.querySelector("#newscontainer").classList.toggle("open");
+}
+
 function controlthis(thisv){
     if(!thisv.paused){//is playing
         thisv.pause();
@@ -46,7 +54,7 @@ var rulcount;
 function openrules(){
     if(document.querySelector("#book").classList.contains("label")){
         clearTimeout(rulcount);
-        rules();
+        sectiontoggle('rules');
             document.querySelector("#book").className="";
             document.querySelector("#book > i").className="bi bi-book";
     } else{
@@ -58,6 +66,17 @@ function openrules(){
         }, 3000);
     }
 }
-function rules(){
-    console.log("rules");
+
+function sectiontoggle(name){
+    if(document.querySelector("#"+name).classList.contains('on')){
+        document.querySelector("#"+name).classList.toggle('onopacity');
+        setTimeout(() => {
+            document.querySelector("#"+name).classList.toggle('on');
+        }, 300);
+    } else {
+        document.querySelector("#"+name).classList.toggle('on');
+        setTimeout(() => {
+            document.querySelector("#"+name).classList.toggle('onopacity');
+        }, 1);
+    }
 }
