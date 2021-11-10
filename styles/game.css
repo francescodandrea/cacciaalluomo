@@ -409,3 +409,23 @@ div.footer > div{
 #rules > div > h4{
     margin: 0.5em 0;
 }
+
+/*-----------QR----------*/
+#QR{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+#QR.on{
+    display: flex;
+}
+#QR > div > p{
+    font-size: 1.3em;
+    margin: 1em 1em 0 0;
+}
+#QR > div > h4{
+    margin: 0.5em 0;
+}
+

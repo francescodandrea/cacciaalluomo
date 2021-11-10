@@ -1,4 +1,5 @@
 function openhints(){
+    document.querySelector("#hint").className="";
     let type=document.querySelector("#hint").dataset.type;
     switch (type) {
         case "hint":

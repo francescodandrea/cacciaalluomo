@@ -36,6 +36,10 @@ function hintsupd(){
     }
     document.querySelector("#hint > i").className=icon;
     document.querySelector("#hint").dataset.type=lasthint.type;
+
+    
+    navigator.vibrate(200);
+    document.querySelector("#hint").className="pulse";
 }
 
 function hintcontents(x){

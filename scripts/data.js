@@ -6,7 +6,7 @@ var teamcode=0;
 
 var hintdata;
 hintsstartup();
-//hintengine(1);
+hintengine(1);
 
 //getplayers();
 //checkcode("4565");
@@ -108,3 +108,27 @@ function checkcode(code){
     xhr.open("GET", "https://script.google.com/macros/s/AKfycbxZv7-NkU8RRHKXj3pwlGlLva4Wh4nVuO9fHekaHiWMJGsrUXJ_-7HoZfoSCUUSXY2GvQ/exec?richiesta=codecheck&code="+code);
     xhr.send();
 }
+
+
+//time
+var countDownDate = new Date("Nov 20, 2021 19:42:00").getTime();
+
+setInterval(() => {
+    let time="";
+
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      time = hours + ":"
+      + minutes + ":" + seconds;
+      
+      if (distance < 0) {
+        time = "TEMPO SCADUTO";
+      }
+    document.querySelector("#time > h3").innerHTML=time;
+}, 1000);
