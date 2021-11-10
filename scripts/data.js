@@ -39,6 +39,7 @@ function gethints(){
 }
 
 function hintscheckupd(){
+    if(localStorage.getItem("HG_h")){
     if(localStorage.getItem("HG_h").length!=JSON.stringify(hintdata).length){
 
         localStorage.setItem("HG_h", JSON.stringify(hintdata));
@@ -55,6 +56,9 @@ function hintscheckupd(){
         }
 
         console.log(hintdata);
+    }
+    } else {
+        localStorage.setItem("HG_h", JSON.stringify(hintdata));
     }
 }
 
