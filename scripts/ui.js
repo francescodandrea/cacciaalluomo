@@ -89,12 +89,12 @@ var newssound = new Audio("media/when-604.mp3");
 
 
 function hintnotify(){
-    if (window.navigator.vibrateanVibrate) window.navigator.vibrate(100);
     hintsound.play();
     document.querySelector("#hint").className="pulse";
+    if (window.navigator.vibrateanVibrate) window.navigator.vibrate(100);
 }
 function newsnotify(){
-    if (window.navigator.vibrateanVibrate) window.navigator.vibrate(300);
     newssound.play();
     document.querySelector("#broadcast").className="read";
+    if (window.navigator.vibrateanVibrate) window.navigator.vibrate(300);
 }

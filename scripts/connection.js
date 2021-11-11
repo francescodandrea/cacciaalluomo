@@ -1,7 +1,7 @@
 function hintsupd(){
     let lasthunt;
-    hintdata.forEach(element => { //get first hunt typed
-        if(lasthunt==undefined && element.type=='hunted'){
+    hintdata.forEach(element => { //get first hunt available
+        if(lasthunt==undefined && element.type=='hunted' && (uservis.includes(element.vis) || element.vis==teamcode)){
             lasthunt=element; return false;
         }
     });
@@ -15,8 +15,8 @@ function hintsupd(){
     sessionStorage.setItem("lasthunt",JSON.stringify(lasthunt));
 
     let lasthint;
-    hintdata.forEach(element => {
-        if(lasthint==undefined && element.type!='hunted'){
+    hintdata.forEach(element => { //get last hint available
+        if(lasthint==undefined && element.type!='hunted' && (uservis.includes(element.vis) || element.vis==teamcode)){
             lasthint=element; return false;
         }
     });
