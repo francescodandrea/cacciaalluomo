@@ -376,11 +376,13 @@ div.footer > div{
 #teamstab > div > h4{
     margin: 0.5em 0;
 }
-
+#teamstab > .content{
+    height: 80%;
+    overflow-y: scroll;
+}
 /*-----------RULES----------*/
 #rules{
     position: absolute;
-    width: 100%;
     top: 0px;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -395,7 +397,10 @@ div.footer > div{
 #rules > div > h4{
     margin: 0.5em 0;
 }
-
+#rules > .content{
+    height: 85%;
+    overflow-y: scroll;
+}
 /*-----------QR----------*/
 #QR{
     position: absolute;
