@@ -24,6 +24,7 @@ html{
 }
 body{
     margin: 0em;
+    width: 100%;
     top:0;
     height: -webkit-fill-available;
     overflow:hidden;
@@ -360,7 +361,7 @@ div.footer > div{
 /*-----------TEAMS----------*/
 #teamstab{
     position: absolute;
-    width: 100%;
+    width: -webkit-fill-available;
     top: 0px;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -398,10 +399,10 @@ div.footer > div{
 /*-----------QR----------*/
 #QR{
     position: absolute;
-    width: 100%;
     top: 0px;
     flex-direction: column;
     flex-wrap: nowrap;
+    height: 100%;
 }
 #QR.on{
     display: flex;
@@ -417,7 +418,6 @@ div.footer > div{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 87%;
 }
 #QR > .content > input{
     font-size: 4em;

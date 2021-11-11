@@ -82,6 +82,29 @@ function hintcontents(x){
     //<div class="hintrow"><h2>HINT TTLE</h2><h4>HINT HINTDESC</h4></div>
 }
 
+function teamsupd(result){
+    var container = document.querySelector("#teamstab > div.content");
+
+    container.innerHTML="";
+        result.forEach(element => {
+            let div = document.createElement("div"),
+                h2 = document.createElement("h2"),
+                h4 = document.createElement("h4");
+
+            div.className="hintrow";
+
+            h2.innerHTML=element.teamnick;
+            
+            h4.innerHTML="<b>"+element.boss+"</b>, "+element.members;
+
+            div.appendChild(h2);
+            div.appendChild(h4);
+
+            container.appendChild(div);
+        });
+}
+
+
 function verificacodice(){
     let code = document.querySelector("#QR > div.content > input").value;
     document.querySelector("#QR > div.content > input").value="";

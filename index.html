@@ -26,7 +26,7 @@
       <div class="header">
         <h4></h4>
         <div id="broadcast" onclick="opennews()"><i class="bi bi-broadcast-pin"></i></div>
-        <div id="people" onclick="sectiontoggle('teamstab')"><i class="bi bi-people-fill"></i></div>
+        <div id="people" onclick="sectiontoggle('teamstab');getplayers()"><i class="bi bi-people-fill"></i></div>
       </div>
       <div id="time">
         <h3>calcolo tempo rimanente...</h3>
@@ -78,7 +78,7 @@
         <p onclick="sectiontoggle('teamstab')">< Indietro</p>
         <h4>Partecipanti</h4>
       </div>
-      <div id="content"></div>
+      <div class="content">Caricamento...</div>
     </section>
     
     <section id="rules">
@@ -86,7 +86,7 @@
         <p onclick="sectiontoggle('rules')">< Indietro</p>
         <h4>Regole</h4>
       </div>
-      <div id="content"></div>
+      <div class="content"></div>
     </section>
 
     <section id="QR">

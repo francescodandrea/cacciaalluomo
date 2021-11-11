@@ -8,7 +8,6 @@ var hintdata;
 hintsstartup();
 hintengine(1);
 
-//getplayers();
 //checkcode("4565");
 getmyplayers("4565");
 
@@ -100,7 +99,7 @@ function getplayers(){
             var result=JSON.parse(this.responseText).reverse();
                 console.log("got players");
                 console.log(result);
-                
+                teamsupd(result);
         }
     });
     xhr.open("GET", "https://script.google.com/macros/s/AKfycbxZv7-NkU8RRHKXj3pwlGlLva4Wh4nVuO9fHekaHiWMJGsrUXJ_-7HoZfoSCUUSXY2GvQ/exec?richiesta=players");
