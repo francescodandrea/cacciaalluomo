@@ -26,6 +26,7 @@ body{
     margin: 0em;
     top:0;
     height: -webkit-fill-available;
+    overflow:hidden;
 }
 section{
     background-color: var(--sfondo);
@@ -428,4 +429,13 @@ div.footer > div{
 #QR > div > h4{
     margin: 0.5em 0;
 }
-
+/*temp*/
+#key > i {
+    border: white solid 4px;
+    padding: 12px;
+    border-radius: 15px;
+    margin: 0.5em;
+}
+#key{
+    margin-top: 3em;
+}
