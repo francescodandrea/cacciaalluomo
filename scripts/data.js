@@ -4,12 +4,23 @@ var hintcon_engine;
 var uservis;
 var teamcode=85;
 
+//ottieni codici salvati
+if(localStorage.getItem("HG_code")){
+    uservis=JSON.parse(localStorage.getItem("HG_code"));
+}
+
+//ottieni codici salvati
+if(localStorage.getItem("HG_tcode")){
+    teamcode=JSON.parse(localStorage.getItem("HG_tcode"));
+}
+
 var hintdata;
 hintsstartup();
 hintengine(1);
 
 //checkcode("4565");
 getmyplayers("4565");
+
 
 function hintengine(x){
     if(x){

@@ -132,8 +132,3 @@ function verificacodice(){
         }, 300);
     }
 }
-
-//ottieni codici salvati
-if(localStorage.getItem("HG_code")){
-    uservis=JSON.parse(localStorage.getItem("HG_code"));
-}
