@@ -1,8 +1,8 @@
 var hintconnection = false;
 var hintcon_engine;
 
-var uservis=[0];
-var teamcode=0;
+var uservis;
+var teamcode=85;
 
 var hintdata;
 hintsstartup();
@@ -136,7 +136,7 @@ function checkcode(code){
 
 
 //time
-var countDownDate = new Date("Nov 20, 2021 19:42:00").getTime();
+var countDownDate = new Date("Nov 20, 2021 22:00:00").getTime();
 setInterval(() => {
     let time="";
 

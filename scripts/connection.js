@@ -53,7 +53,8 @@ function hintcontents(x){
                     h4 = document.createElement("h4");
                 
                 div.className="hintrow";
-                
+                if(element.vis!=0) div.classList.add("chall");
+
                 h2.innerHTML=element.title;
                 if(element.img) img.src=element.img;
 
@@ -84,6 +85,7 @@ function hintcontents(x){
 function verificacodice(){
     let code = document.querySelector("#QR > div.content > input").value;
     document.querySelector("#QR > div.content > input").value="";
+    code=parseInt(code);
     let verified=false;
 
     hintdata.forEach(element => {
@@ -91,9 +93,11 @@ function verificacodice(){
     });
 
     if(code==0) verified=false;
+    if(code) uservis=[0];
 
     if(verified){
         uservis.push(code);
+        localStorage.setItem("HG_code", JSON.stringify(uservis));
         sectiontoggle('QR');
         setTimeout(() => {
             openhints();
@@ -101,4 +105,9 @@ function verificacodice(){
             hintsupd();
         }, 300);
     }
+}
+
+//ottieni codici salvati
+if(localStorage.getItem("HG_code")){
+    uservis=JSON.parse(localStorage.getItem("HG_code"));
 }
