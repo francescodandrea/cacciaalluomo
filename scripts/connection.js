@@ -12,8 +12,8 @@ function hintsupd(){
             }
         });
     }
-
     sessionStorage.setItem("lasthunt",JSON.stringify(lasthunt));
+
     let lasthint;
     hintdata.forEach(element => {
         if(lasthint==undefined && element.type!='hunted'){

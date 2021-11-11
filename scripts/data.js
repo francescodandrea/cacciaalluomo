@@ -60,18 +60,22 @@ function hintscheckupd(){
         //check in detail
         let newscount = 0;
         hintdata.forEach(element => {
-            if(element.type=="news") newscount=+JSON.stringify(element).length;
+            if(element.type=="news"){
+                newscount+=element.title.length;
+                newscount+=element.desc.length;
+            }
         });
 
         if(localStorage.getItem("NEWSc")){
             if(localStorage.getItem("NEWSc")!=newscount){
                 //news aggiornate
                 newsnotify();
-            }
+            }else{
             //indizi aggiornati
             hintnotify();
+            }
         }
-        localStorage.setItem("NEWSc", JSON.stringify(hintdata).length);
+        localStorage.setItem("NEWSc", newscount);
 
 
     }

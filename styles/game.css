@@ -86,6 +86,17 @@ div.header > div{
 #broadcast{
     margin-left: auto;
     margin-right: 1em;
+    position: relative;
+}
+#broadcast.read::before {
+    content: " ";
+    background-color: red;
+    height: 10px;
+    width: 10px;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    border-radius: 20px;
 }
 /*footer*/
 #game > .footer{
@@ -323,54 +334,6 @@ div.footer > div{
 }
 #newsscreen > h1{
     margin: 0;
-}
-#hintscreen.chall{
-    background-color: var(--chall);
-    box-shadow: 3px 3px 10px 0px var(--challshadow);
-}
-#hintscreen.hint{
-    background-color: var(--hint);
-    box-shadow: 3px 3px 10px 0px var(--hintshadow);
-}
-/*hintmenu*/
-#hintmenu{
-    display: flex;
-    justify-content: space-around;
-}
-#hintmenu > p{
-    padding: 0.5em;
-    border-bottom: solid transparent;
-    padding-bottom: 0.2em;
-    transition: all 0.3s;
-    height: 1.2em;
-}
-#hintmenu > p.cur{
-    background-color: #ffffff3b;
-    border-bottom: solid white;
-    height: 1.2em;
-}
-/*hintcontent*/
-#hintcontent{
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 84%;
-}
-.hintrow{
-    border-bottom: solid #ffffff6b;
-}
-.hintrow > h2{
-    margin-bottom: 0.2em;
-}
-.hintrow > img{
-    max-width: 100%;
-}
-.hintrow > video{
-    max-width: 100%;
-}
-.hintrow > h4{
-    margin-top: 0.3em;
-    font-weight: 400;
-    line-height: 1.2em;
 }
 
 /*-----------TEAMS----------*/
