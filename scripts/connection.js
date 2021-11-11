@@ -80,3 +80,25 @@ function hintcontents(x){
         });
     //<div class="hintrow"><h2>HINT TTLE</h2><h4>HINT HINTDESC</h4></div>
 }
+
+function verificacodice(){
+    let code = document.querySelector("#QR > div.content > input").value;
+    document.querySelector("#QR > div.content > input").value="";
+    let verified=false;
+
+    hintdata.forEach(element => {
+        if(element.vis==code) verified=true;
+    });
+
+    if(code==0) verified=false;
+
+    if(verified){
+        uservis.push(code);
+        sectiontoggle('QR');
+        setTimeout(() => {
+            openhints();
+            hintnotify();
+            hintsupd();
+        }, 300);
+    }
+}
