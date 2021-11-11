@@ -56,6 +56,24 @@ function hintscheckupd(){
         }
 
         console.log(hintdata);
+
+        //check in detail
+        let newscount = 0;
+        hintdata.forEach(element => {
+            if(element.type=="news") newscount=+JSON.stringify(element).length;
+        });
+
+        if(localStorage.getItem("NEWSc")){
+            if(localStorage.getItem("NEWSc")!=newscount){
+                //news aggiornate
+                newsnotify();
+            }
+            //indizi aggiornati
+            hintnotify();
+        }
+        localStorage.setItem("NEWSc", JSON.stringify(hintdata).length);
+
+
     }
     } else {
         localStorage.setItem("HG_h", JSON.stringify(hintdata));
@@ -116,7 +134,6 @@ function checkcode(code){
 
 //time
 var countDownDate = new Date("Nov 20, 2021 19:42:00").getTime();
-
 setInterval(() => {
     let time="";
 
