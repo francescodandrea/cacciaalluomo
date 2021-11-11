@@ -32,7 +32,14 @@ function hintmenu(x){
             break;
         case 3:
             var container = document.querySelector("#hintcontent");
-            container.innerHTML='<div id="key" onclick="sectiontoggle('+"'QR'"+')"><i class="bi bi bi-key"></i></div>';
+            container.innerHTML='<div class="br">Emotes</div>';
+            container.innerHTML+='<div class="emote" onclick="emote(0)"><i class="bi bi-cloud-arrow-up-fill"></i></div>';
+            container.innerHTML+='<div class="emote" onclick="emote(1)"><i class="bi bi-bullseye"></i></div>';
+            container.innerHTML+='<div class="emote" onclick="emote(2)"><i class="bi bi-emoji-sunglasses-fill"></i></div>';
+            container.innerHTML+='<div class="br">Trofei</div>';
+            container.innerHTML+='<div class="emote"><i class="bi bi-cloud-arrow-up-fill"></i></div>';
+            container.innerHTML+='<div class="br">Queste funzioni potrebbero servirti più tardi.</div>';
+            container.innerHTML+='<div id="key" class="emote" onclick="sectiontoggle('+"'QR'"+')"><i class="bi bi-key"></i></div>';
             document.querySelector("#hintscreen").className="";
             break;
     }
@@ -97,4 +104,20 @@ function newsnotify(){
     newssound.play();
     document.querySelector("#broadcast").className="read";
     if (window.navigator.vibrateanVibrate) window.navigator.vibrate(300);
+}
+
+function emote(x){
+    let audio;
+    switch (x) {
+        case 0:
+            audio = new Audio("media/emotes/credulous-512.mp3");
+            break;
+        case 1:
+            audio = new Audio("media/emotes/sonar-259.mp3");
+            break;
+        case 2:
+            audio = new Audio("media/emotes/avtr_common_boy_yeah_01.wav.mp3");
+            break;
+    }
+    audio.play();
 }

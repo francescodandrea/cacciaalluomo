@@ -79,6 +79,9 @@ function hintcontents(x){
                 container.appendChild(div);
             }
         });
+    if(x=="hint" && container.innerHTML=="") container.innerHTML="<br>Qui troverai gli indizi";
+    if(x=="chall" && container.innerHTML=="") container.innerHTML="<br>Non ci sono sfide attive.<br>Controlla più tardi e non fartele scappare!";
+
     //<div class="hintrow"><h2>HINT TTLE</h2><h4>HINT HINTDESC</h4></div>
 }
 
