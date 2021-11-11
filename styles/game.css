@@ -247,6 +247,7 @@ div.footer > div{
     box-sizing: border-box;
     padding: 1.5em;
     position:relative;
+    overflow: hidden;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 #hintscreen > p{
@@ -292,10 +293,10 @@ div.footer > div{
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    justify-content: center;
 }
 .hintrow{
     border-bottom: solid #ffffff6b;
+    width: 100%;
 }
 .hintrow > h2{
     margin-bottom: 0.2em;
