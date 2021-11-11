@@ -1,7 +1,7 @@
 var hintconnection = false;
 var hintcon_engine;
 
-var uservis;
+var uservis=0;
 var teamcode=85;
 
 //ottieni codici salvati
