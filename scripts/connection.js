@@ -90,20 +90,22 @@ function teamsupd(result){
 
     container.innerHTML="";
         result.forEach(element => {
-            let div = document.createElement("div"),
-                h2 = document.createElement("h2"),
-                h4 = document.createElement("h4");
+            if(element.teamnick!="test"){
+                let div = document.createElement("div"),
+                    h2 = document.createElement("h2"),
+                    h4 = document.createElement("h4");
 
-            div.className="hintrow";
+                div.className="hintrow";
 
-            h2.innerHTML=element.teamnick;
-            
-            h4.innerHTML="<b>"+element.boss+"</b>, "+element.members;
+                h2.innerHTML=element.teamnick;
+                
+                h4.innerHTML="<b>"+element.boss+"</b>, "+element.members;
 
-            div.appendChild(h2);
-            div.appendChild(h4);
+                div.appendChild(h2);
+                div.appendChild(h4);
 
-            container.appendChild(div);
+                container.appendChild(div);
+            }
         });
 }
 
