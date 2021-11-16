@@ -294,6 +294,9 @@ div.footer > div{
     flex-wrap: wrap;
     align-content: flex-start;
 }
+#hintcontent > a {
+    color: white;
+}
 .hintrow{
     border-bottom: solid #ffffff6b;
     width: 100%;
@@ -443,6 +446,7 @@ div.footer > div{
     letter-spacing: 0.2em;
     text-align: center;
     border-radius: 2em;
+    font-family: 'Rubik';
 }
 #QR > .content > button {
     font-size: 2em;
@@ -453,6 +457,7 @@ div.footer > div{
     color: white;
     padding: 0.5em;
     margin: 1em;
+    font-family: 'Rubik';
 }
 /*-----------EXTRA----------*/
 .emote > i {
@@ -469,4 +474,54 @@ div.footer > div{
 }
 .emote:active {
     transform:scale(0.9);
+}
+/*-----------LANDING----------*/
+#landing{
+    position: absolute;
+    top: 0px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: -webkit-fill-available;
+    padding-top: 3em !important;
+}
+#landing.on{
+    display: flex;
+}
+#landing > div.header > img {
+    width: 26%;
+    right: 1.5em;
+    position: absolute;
+}
+#landing > div.header > h1 {
+    font-size: 2em;
+    padding-left: 0.3em;
+}
+#landing > div.content > h4 {
+    font-size: 1.5em;
+    font-family: 'Rubik';
+}
+#landing > .content {
+    margin-top: 5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#landing > .content > input {
+    font-size: 3em;
+    width: 5em;
+    letter-spacing: 0.2em;
+    text-align: center;
+    border-radius: 15px;
+    font-family: 'Rubik';
+}
+#landing > .content > button {
+    font-size: 2em;
+    background-color: var(--tre);
+    text-align: center;
+    border: none;
+    color: white;
+    margin: 1em;
+    border-radius: 51px;
+    padding: 0.5em 1em 0.5em 1em;
+    font-family: 'Rubik';
 }

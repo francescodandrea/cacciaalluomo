@@ -109,7 +109,6 @@ function teamsupd(result){
         });
 }
 
-
 function verificacodice(){
     let code = document.querySelector("#QR > div.content > input").value;
     document.querySelector("#QR > div.content > input").value="";
@@ -132,5 +131,23 @@ function verificacodice(){
             hintnotify();
             hintsupd();
         }, 300);
+    }
+}
+
+function checklogin(){
+    let logincode = document.querySelector("#logincode").value;
+    checkcode(logincode);
+    document.querySelector("#logincode").ariaDisabled=true;
+    document.querySelector("#landing > div.content > button").style.backgroundColor="#ac96d1";
+}
+
+function logincheck(x){
+    if(x){
+        let logincode = document.querySelector("#logincode").value;
+        localStorage.setItem("HG_tc",logincode);
+        logged(logincode);
+    } else {
+        document.querySelector("#logincode").ariaDisabled=false;
+        document.querySelector("#landing > div.content > button").style.backgroundColor="#7531e6";
     }
 }

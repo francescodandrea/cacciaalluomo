@@ -1,3 +1,17 @@
+if(localStorage.getItem("HG_tc")){
+    logged(localStorage.getItem("HG_tc"));
+}
+
+function logged(logincode){
+    sectiontoggle('game');
+    teamcode=logincode;
+    getmyplayers(logincode);
+}
+function logout(){
+    localStorage.clear("HG_tc");
+    location.reload();
+}
+
 function openhints(){
     document.querySelector("#hint").className="";
     let type=document.querySelector("#hint").dataset.type;
@@ -36,10 +50,11 @@ function hintmenu(x){
             container.innerHTML+='<div class="emote" onclick="emote(0)"><i class="bi bi-cloud-arrow-up-fill"></i></div>';
             container.innerHTML+='<div class="emote" onclick="emote(1)"><i class="bi bi-bullseye"></i></div>';
             container.innerHTML+='<div class="emote" onclick="emote(2)"><i class="bi bi-emoji-sunglasses-fill"></i></div>';
-            container.innerHTML+='<div class="br">Trofei</div>';
-            container.innerHTML+='<div class="emote"><i class="bi bi-cloud-arrow-up-fill"></i></div>';
+            container.innerHTML+='<div class="br">Contattaci</div>';
+            container.innerHTML+='<a href="https://www.instagram.com/oratoriosampe/"><div class="emote"><i class="bi bi-telephone"></i></div></a>';
             container.innerHTML+='<div class="br">Queste funzioni potrebbero servirti più tardi.</div>';
             container.innerHTML+='<div id="key" class="emote" onclick="sectiontoggle('+"'QR'"+')"><i class="bi bi-key"></i></div>';
+            container.innerHTML+='<div class="emote" onclick="logout()"><i class="bi bi-box-arrow-right"></i></div>';
             document.querySelector("#hintscreen").className="";
             break;
     }

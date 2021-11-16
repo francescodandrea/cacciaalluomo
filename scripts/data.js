@@ -18,10 +18,6 @@ var hintdata;
 hintsstartup();
 hintengine(1);
 
-//checkcode("4565");
-getmyplayers("4565");
-
-
 function hintengine(x){
     if(x){
         hintcon_engine = setInterval(() => {
@@ -136,14 +132,14 @@ function checkcode(code){
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
             var result=JSON.parse(this.responseText).reverse();
-                console.log("code checked");
-                console.log(result[0].check);      
+                console.log("code checked");  
+                logincheck(result[0].check);
+                //return result[0].check;
         }
     });
     xhr.open("GET", "https://script.google.com/macros/s/AKfycbxZv7-NkU8RRHKXj3pwlGlLva4Wh4nVuO9fHekaHiWMJGsrUXJ_-7HoZfoSCUUSXY2GvQ/exec?richiesta=codecheck&code="+code);
     xhr.send();
 }
-
 
 //time
 var countDownDate = new Date("Nov 20, 2021 22:00:00").getTime();

@@ -22,7 +22,19 @@
     <title>Caccia all'uomo</title>
   </head>
   <body>
-    <section id="game" class="on onopacity">
+    <section id="landing" class="on onopacity">
+      <div class="header">
+        <img src="media\img\Logo2021_WHITE.png">
+        <h1>Caccia all'uomo</h1>
+      </div>
+      <div class="content">
+        <h4>Inserisci il codice squadra</h4>
+        <input type="number" id="logincode">
+        <button onclick="checklogin()">Accedi</button>
+      </div>
+    </section>
+
+    <section id="game">
       <div class="header">
         <h4></h4>
         <div id="broadcast" onclick="opennews()"><i class="bi bi-broadcast-pin"></i></div>
