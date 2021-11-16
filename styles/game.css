@@ -55,7 +55,7 @@ i{
     margin-top: 1em;
 }
 .br:not(:first-child) {
-    margin-top: 4em;
+    margin-top: 2em;
 }
 /*colors*/
 #time{color: var(--whitey)}
@@ -482,7 +482,7 @@ div.footer > div{
     flex-direction: column;
     flex-wrap: nowrap;
     height: -webkit-fill-available;
-    padding-top: 3em !important;
+    padding-top: 1em !important;
 }
 #landing.on{
     display: flex;
@@ -501,7 +501,7 @@ div.footer > div{
     font-family: 'Rubik';
 }
 #landing > .content {
-    margin-top: 5em;
+    margin-top: 2em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
