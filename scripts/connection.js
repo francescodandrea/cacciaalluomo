@@ -45,7 +45,7 @@ function hintsupd(){
     container.appendChild(img);
 
     hintdata.forEach(element => {
-        if(element.map) {
+        if(element.map  && (uservis.includes(element.vis) || element.vis==teamcode)) {
            let img = document.createElement("img");
            img.src="media/img/maps/"+element.map+".png";
            img.className=element.map.split("_")[1];
