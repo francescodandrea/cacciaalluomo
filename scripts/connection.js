@@ -37,6 +37,22 @@ function hintsupd(){
     document.querySelector("#hint > i").className=icon;
     document.querySelector("#hint").dataset.type=lasthint.type;
 
+    //map contents
+    let container=document.querySelector("#map");
+    container.innerHTML="";
+    let img = document.createElement("img");
+    img.src="media/img/maps/base.png";
+    container.appendChild(img);
+
+    hintdata.forEach(element => {
+        if(element.map) {
+           let img = document.createElement("img");
+           img.src="media/img/maps/"+element.map+".png";
+           img.className=element.map.split("_")[1];
+           container.appendChild(img);
+        }
+    });
+
 }
 
 function hintcontents(x){
@@ -62,10 +78,13 @@ function hintcontents(x){
                     if(element.vid[1]=='t')
                         vid.src=element.vid;
                      else
-                        vid.src="media/vid/"+element.vid;
+                        vid.src="media/vid/"+element.vid.split("_")[1];
                     vid.setAttribute("type","video/mp4");
                     vid.setAttribute("onclick", "controlthis(this)");
-                    //vid.autoplay=true;
+                    if(element.vid.split("_")[0]=="loop"){
+                        vid.autoplay=true;
+                        vid.loop=true;
+                    }
                     vid.muted=true;
                 }
                 

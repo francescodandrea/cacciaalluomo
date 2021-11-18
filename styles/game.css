@@ -177,15 +177,42 @@ div.footer > div{
     font-weight: 100;
 }
 /*map*/
-#map{
+#map {
     display: flex;
     justify-content: center;
     align-content: center;
     margin: 1em;
     height: 50%;
+    position: relative;
 }
 #map > img {
-    height:100%;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+}
+#map > img.dot {
+    animation: dot 0.5s linear infinite alternate-reverse;
+}
+@keyframes dot {
+    0%{
+        filter:brightness(0);
+        opacity: 0.5;
+    }
+    100%{
+        filter:brightness();
+        opacity: 1;
+    }
+}
+#map > img.pin {
+    animation: pin 0.3s cubic-bezier(1, 0, 1, 1) infinite alternate-reverse;
+}
+@keyframes pin {
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(10px);
+    }
 }
 /*hint*/
 #hint{
