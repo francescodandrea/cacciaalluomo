@@ -141,6 +141,8 @@ function verificacodice(){
     if(code==0) verified=false;
     if(code) uservis=[0];
 
+    sendcode(code); //send to dash
+
     if(verified){
         uservis.push(code);
         localStorage.setItem("HG_code", JSON.stringify(uservis));

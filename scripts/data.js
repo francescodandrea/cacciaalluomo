@@ -35,7 +35,7 @@ function gethints(){
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
             var result=JSON.parse(this.responseText).reverse();
-                console.log("hint upd");
+                //console.log("hint upd");
                 hintdata=result;
                 hintscheckupd();
         }
@@ -61,7 +61,7 @@ function hintscheckupd(){
                 document.querySelector("#hintcontent").scrollTo(0,0); //scroll in alto
         }
 
-        console.log(hintdata);
+        //console.log(hintdata);
 
         //check in detail
         let newscount = 0;
@@ -93,7 +93,7 @@ function hintscheckupd(){
 function hintsstartup(){
     if(localStorage.getItem("HG_h")){
         hintdata=JSON.parse(localStorage.getItem("HG_h"));
-        console.log(hintdata);
+        //console.log(hintdata);
         hintsupd();
     }
     gethints();
@@ -104,8 +104,8 @@ function getplayers(){
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
             var result=JSON.parse(this.responseText).reverse();
-                console.log("got players");
-                console.log(result);
+                //console.log("got players");
+                //console.log(result);
                 teamsupd(result);
         }
     });
@@ -118,8 +118,8 @@ function getmyplayers(code){
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
             var result=JSON.parse(this.responseText).reverse();
-                console.log("got players");
-                console.log(result);
+                //console.log("got players");
+                //console.log(result);
                 document.querySelector("#game > div.header > h4").innerHTML=result[0].teamnick;
         }
     });
@@ -132,12 +132,18 @@ function checkcode(code){
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
             var result=JSON.parse(this.responseText).reverse();
-                console.log("code checked");  
+                //console.log("code checked");  
                 logincheck(result[0].check);
                 //return result[0].check;
         }
     });
     xhr.open("GET", "https://script.google.com/macros/s/AKfycbxZv7-NkU8RRHKXj3pwlGlLva4Wh4nVuO9fHekaHiWMJGsrUXJ_-7HoZfoSCUUSXY2GvQ/exec?richiesta=codecheck&code="+code);
+    xhr.send();
+}
+
+function sendcode(code){
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://script.google.com/macros/s/AKfycbxZv7-NkU8RRHKXj3pwlGlLva4Wh4nVuO9fHekaHiWMJGsrUXJ_-7HoZfoSCUUSXY2GvQ/exec?code="+code+"&user="+teamcode);
     xhr.send();
 }
 
