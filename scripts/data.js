@@ -148,7 +148,7 @@ function sendcode(code){
 }
 
 //time
-var countDownDate = new Date("Nov 20, 2021 22:00:00").getTime();
+var countDownDate = new Date("Nov 20, 2021 22:30:00").getTime();
 setInterval(() => {
     let time="";
 

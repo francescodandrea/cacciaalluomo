@@ -113,7 +113,10 @@ var newssound = new Audio("media/when-604.mp3");
 function hintnotify(){
     hintsound.play();
     document.querySelector("#hint").className="pulse";
-    if (window.navigator.vibrateanVibrate) window.navigator.vibrate(100);
+    try{
+        window.navigator.vibrate(100);
+    }
+    catch {}
 }
 function newsnotify(){
     newssound.play();

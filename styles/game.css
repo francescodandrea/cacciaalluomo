@@ -401,6 +401,11 @@ div.footer > div{
     border-radius: 22px;
     position: absolute;
 }
+#newscontent {
+    overflow: hidden;
+    height: 91%;
+    overflow-y: scroll;
+}
 /*-----------TEAMS----------*/
 #teamstab{
     position: absolute;
@@ -441,8 +446,10 @@ div.footer > div{
     margin: 0.5em 0;
 }
 #rules > .content{
-    height: 85%;
     overflow-y: scroll;
+}
+#rules > div.content > img{
+    width: 100%;
 }
 /*-----------QR----------*/
 #QR{
@@ -551,4 +558,19 @@ div.footer > div{
     border-radius: 51px;
     padding: 0.5em 1em 0.5em 1em;
     font-family: 'Rubik';
+}
+
+#landing > div.content > div {
+    margin: auto;
+    margin-top:5em;
+    display: flex;
+    opacity: 0.6;
+    flex-basis: 100%;
+    justify-content: center;
+}
+element.style {
+    font-size: 2em;
+    padding-right: 0.5em;
+    padding-top: 0.1em;
+    margin: 0px;
 }
